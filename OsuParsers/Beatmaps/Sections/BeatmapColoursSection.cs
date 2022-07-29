@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
+using UnityEngine;
 
 namespace OsuParsers.Beatmaps.Sections
 {
@@ -11,16 +11,16 @@ namespace OsuParsers.Beatmaps.Sections
         /// <summary>
         /// Additive combo colours.
         /// </summary>
-        public List<Color> ComboColours { get; set; } = new List<Color>();
+        public List<Color32> ComboColours { get; set; } = new List<Color32>();
 
         /// <summary>
         /// Additive slider track colour.
         /// </summary>
-        public Color SliderTrackOverride { get; set; }
+        public Color32 SliderTrackOverride { get; set; }
 
         /// <summary>
         /// Slider border colour.
         /// </summary>
-        public Color SliderBorder { get; set; }
+        public Color32 SliderBorder { get; set; }
     }
 }

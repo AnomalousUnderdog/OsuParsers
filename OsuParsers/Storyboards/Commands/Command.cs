@@ -1,6 +1,5 @@
 ﻿using OsuParsers.Enums.Storyboards;
 using OsuParsers.Storyboards.Interfaces;
-using System.Drawing;
 using UnityEngine;
 
 namespace OsuParsers.Storyboards.Commands
@@ -11,8 +10,8 @@ namespace OsuParsers.Storyboards.Commands
         public Easing Easing { get; set; }
         public int StartTime { get; set; }
         public int EndTime { get; set; }
-        public Color StartColour { get; set; }
-        public Color EndColour { get; set; }
+        public Color32 StartColour { get; set; }
+        public Color32 EndColour { get; set; }
         public Vector2 StartVector { get; set; }
         public Vector2 EndVector { get; set; }
         public float StartFloat { get; set; }
@@ -38,7 +37,7 @@ namespace OsuParsers.Storyboards.Commands
             EndVector = endValue;
         }
 
-        public Command(Easing easing, int startTime, int endTime, Color startValue, Color endValue)
+        public Command(Easing easing, int startTime, int endTime, Color32 startValue, Color32 endValue)
         {
             Type = CommandType.Colour;
             Easing = easing;

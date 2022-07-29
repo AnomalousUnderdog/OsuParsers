@@ -5,6 +5,7 @@ using OsuParsers.Enums.Storyboards;
 using OsuParsers.Helpers;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace OsuParsers.Encoders
 {
@@ -162,7 +163,7 @@ namespace OsuParsers.Encoders
 
         public static List<string> Colours(BeatmapColoursSection section)
         {
-            if (section.ComboColours.Count == 0 && section.SliderTrackOverride == default && section.SliderBorder == default)
+            if (section.ComboColours.Count == 0 && section.SliderTrackOverride.EqualWhite() && section.SliderBorder.EqualWhite())
                 return new List<string>();
 
             var list = WriteHelper.BaseListFormat("Colours");
@@ -170,10 +171,10 @@ namespace OsuParsers.Encoders
                 for (int i = 0; i < section.ComboColours.Count; i++)
                     list.Add($"Combo{i + 1} : {WriteHelper.Colour(section.ComboColours[i])}");
 
-            if (section.SliderTrackOverride != default)
+            if (!section.SliderTrackOverride.EqualWhite())
                 list.Add($"SliderTrackOverride : {WriteHelper.Colour(section.SliderTrackOverride)}");
 
-            if (section.SliderBorder != default)
+            if (!section.SliderBorder.EqualWhite())
                 list.Add($"SliderBorder : {WriteHelper.Colour(section.SliderBorder)}");
 
             return list;

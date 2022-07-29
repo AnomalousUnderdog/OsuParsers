@@ -7,7 +7,6 @@ using OsuParsers.Storyboards.Interfaces;
 using OsuParsers.Storyboards.Objects;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using UnityEngine;
 
@@ -29,11 +28,11 @@ namespace OsuParsers.Helpers
             return $"{offset},{msPerBeat},{meter},{sampleSet},{sampleIndex},{volume},{uninherited},{effects}";
         }
 
-        public static string Colour(Color colour)
+        public static string Colour(Color32 colour)
         {
-            var r = colour.R;
-            var g = colour.G;
-            var b = colour.B;
+            var r = colour.r;
+            var g = colour.g;
+            var b = colour.b;
 
             return $"{r},{g},{b}";
         }
@@ -210,10 +209,10 @@ namespace OsuParsers.Helpers
                     else
                         return $"{command.StartFloat.Format()},{command.EndFloat.Format()}";
                 case CommandType.Colour:
-                    if (command.StartColour == command.EndColour)
-                        return $"{command.StartColour.R},{command.StartColour.G},{command.StartColour.B}";
+                    if (command.StartColour.Equal(command.EndColour))
+                        return $"{command.StartColour.r},{command.StartColour.g},{command.StartColour.b}";
                     else
-                        return $"{command.StartColour.R},{command.StartColour.G},{command.StartColour.B},{command.EndColour.R},{command.EndColour.G},{command.EndColour.B}";
+                        return $"{command.StartColour.r},{command.StartColour.g},{command.StartColour.b},{command.EndColour.r},{command.EndColour.g},{command.EndColour.b}";
                 case CommandType.FlipHorizontal:
                     return "H";
                 case CommandType.FlipVertical:

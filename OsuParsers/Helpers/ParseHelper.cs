@@ -2,7 +2,6 @@ using OsuParsers.Enums;
 using OsuParsers.Enums.Beatmaps;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using UnityEngine;
@@ -51,10 +50,10 @@ namespace OsuParsers.Helpers
             return sliderPoints;
         }
 
-        public static Color ParseColour(string line)
+        public static Color32 ParseColour(string line)
         {
-            int[] colour = line.Split(',').Select(c => Convert.ToInt32(c)).ToArray();
-            return Color.FromArgb(colour.Length == 4 ? colour[3] : 255, colour[0], colour[1], colour[2]);
+            byte[] colour = line.Split(',').Select(c => Convert.ToByte(c)).ToArray();
+            return new Color32(colour[0], colour[1], colour[2], colour.Length == 4 ? colour[3] : byte.MaxValue);
         }
 
         public static bool IsLineValid(string line, FileSections currentSection)

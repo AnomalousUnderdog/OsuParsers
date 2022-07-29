@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using UnityEngine;
 
 namespace OsuParsers.Helpers
 {
@@ -42,6 +43,21 @@ namespace OsuParsers.Helpers
                 var full = sr.ReadToEnd();
                 return full.Split(new string[] { Environment.NewLine }, 0);
             }
+        }
+
+        public static bool Equal(this Color32 a, Color32 b)
+        {
+            return a.r == b.r && a.g == b.g && a.b == b.b && a.a == b.a;
+        }
+
+        public static bool Equal(this Color32 a, byte br, byte bg, byte bb, byte ba)
+        {
+            return a.r == br && a.g == bg && a.b == bb && a.a == ba;
+        }
+
+        public static bool EqualWhite(this Color32 a)
+        {
+            return a.Equal(255, 255, 255, 255);
         }
     }
 }

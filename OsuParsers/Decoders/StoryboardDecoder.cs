@@ -6,7 +6,6 @@ using OsuParsers.Storyboards.Interfaces;
 using OsuParsers.Storyboards.Objects;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -242,8 +241,8 @@ namespace OsuParsers.Decoders
                             float endGreen = tokens.Length > 8 ? ParseHelper.ToFloat(tokens[8]) : startGreen;
                             float endBlue = tokens.Length > 9 ? ParseHelper.ToFloat(tokens[9]) : startBlue;
                             commandGroup.Commands.Add(new Command(easing, startTime, endTime,
-                                Color.FromArgb(255, (int)startRed, (int)startGreen, (int)startBlue),
-                                Color.FromArgb(255, (int)endRed, (int)endGreen, (int)endBlue)));
+                                new Color32((byte)startRed, (byte)startGreen, (byte)startBlue, byte.MaxValue),
+                                new Color32((byte)endRed, (byte)endGreen, (byte)endBlue, byte.MaxValue)));
                         }
                             break;
                         case "P":
