@@ -1,5 +1,6 @@
 namespace OsuParsers.Enums.Beatmaps
 {
+    [System.Flags]
     public enum HitSoundType
     {
         None = 0,

@@ -122,7 +122,7 @@ namespace OsuParsers.Serialization
                         base.Write((char[])obj);
                         break;
                     default:
-                        throw new NotImplementedException();
+                        throw new ArgumentException($"Unexpected Type: {obj.GetType().Name} ({obj.GetType().FullName}) Object:\n{obj}");
                 }
             }
         }
