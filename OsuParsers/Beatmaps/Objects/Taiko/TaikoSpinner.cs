@@ -1,5 +1,5 @@
 ﻿using OsuParsers.Enums.Beatmaps;
-using System.Numerics;
+using UnityEngine;
 
 namespace OsuParsers.Beatmaps.Objects.Taiko
 {

@@ -9,7 +9,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Numerics;
+using UnityEngine;
+using EventType = OsuParsers.Enums.Storyboards.EventType;
 
 namespace OsuParsers.Decoders
 {

@@ -1,6 +1,6 @@
 ﻿using OsuParsers.Enums.Beatmaps;
 using System;
-using System.Numerics;
+using UnityEngine;
 
 namespace OsuParsers.Beatmaps.Objects
 {
@@ -12,7 +12,7 @@ namespace OsuParsers.Beatmaps.Objects
         /// <summary>
         /// HitObject's position.
         /// </summary>
-        public Vector2 Position { get; set; } = Vector2.Zero;
+        public Vector2 Position { get; set; } = Vector2.zero;
 
         /// <summary>
         /// Start time offset of this object.

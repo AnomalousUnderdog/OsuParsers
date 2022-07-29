@@ -1,6 +1,6 @@
 ﻿using OsuParsers.Enums.Beatmaps;
 using System;
-using System.Numerics;
+using UnityEngine;
 
 namespace OsuParsers.Beatmaps.Objects.Mania
 {
@@ -30,13 +30,13 @@ namespace OsuParsers.Beatmaps.Objects.Mania
         public int GetColumn(int count)
         {
             double width = 512.0 / count;
-            return (int)(Position.X / width);
+            return (int)(Position.x / width);
         }
 
         public new Vector2 Position
         {
             set => base.Position = value;
-            get => new Vector2(base.Position.X, 0);
+            get => new Vector2(base.Position.x, 0);
         }
     }
 }

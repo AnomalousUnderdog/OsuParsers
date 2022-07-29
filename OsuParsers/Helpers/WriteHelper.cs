@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using UnityEngine;
 
 namespace OsuParsers.Helpers
 {
@@ -39,8 +40,8 @@ namespace OsuParsers.Helpers
 
         public static string HitObject(HitObject hitObject)
         {
-            var x = hitObject.Position.X;
-            var y = hitObject.Position.Y;
+            var x = hitObject.Position.x;
+            var y = hitObject.Position.y;
             var time = hitObject.StartTime;
             var hitsound = (int)hitObject.HitSound;
             var extras = HitObjectExtras(hitObject.Extras);
@@ -66,7 +67,7 @@ namespace OsuParsers.Helpers
             var sliderType = CurveType(slider.CurveType);
 
             string sliderPoints = string.Empty;
-            slider.SliderPoints.ForEach(pt => sliderPoints += $"|{pt.X}:{pt.Y}");
+            slider.SliderPoints.ForEach(pt => sliderPoints += $"|{pt.x}:{pt.y}");
 
             var repeats = slider.Repeats;
             var pixelLength = slider.PixelLength.Format();
@@ -196,9 +197,9 @@ namespace OsuParsers.Helpers
                 case CommandType.Movement:
                 case CommandType.VectorScale:
                     if (command.StartVector.Equals(command.EndVector))
-                        return $"{command.StartVector.X.Format()},{command.StartVector.Y.Format()}";
+                        return $"{command.StartVector.x.Format()},{command.StartVector.y.Format()}";
                     else
-                        return $"{command.StartVector.X.Format()},{command.StartVector.Y.Format()},{command.EndVector.X.Format()},{command.EndVector.Y.Format()}";
+                        return $"{command.StartVector.x.Format()},{command.StartVector.y.Format()},{command.EndVector.x.Format()},{command.EndVector.y.Format()}";
                 case CommandType.Fade:
                 case CommandType.Rotation:
                 case CommandType.Scale:

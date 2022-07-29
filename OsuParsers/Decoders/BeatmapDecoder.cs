@@ -12,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Numerics;
 
 namespace OsuParsers.Decoders
 {
@@ -358,7 +357,7 @@ namespace OsuParsers.Decoders
         {
             string[] tokens = line.Split(',');
 
-            Vector2 position = new Vector2(ParseHelper.ToFloat(tokens[0]), ParseHelper.ToFloat(tokens[1]));
+            var position = new UnityEngine.Vector2(ParseHelper.ToFloat(tokens[0]), ParseHelper.ToFloat(tokens[1]));
 
             int startTime = Convert.ToInt32(tokens[2]);
 
@@ -402,7 +401,7 @@ namespace OsuParsers.Decoders
                 case HitObjectType.Slider:
                 {
                     CurveType curveType = ParseHelper.GetCurveType(tokens[5].Split('|')[0][0]);
-                    List<Vector2> sliderPoints = ParseHelper.GetSliderPoints(tokens[5].Split('|'));
+                    List<UnityEngine.Vector2> sliderPoints = ParseHelper.GetSliderPoints(tokens[5].Split('|'));
 
                     int repeats = Convert.ToInt32(tokens[6]);
                     double pixelLength = ParseHelper.ToDouble(tokens[7]);
