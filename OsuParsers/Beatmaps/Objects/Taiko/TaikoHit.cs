@@ -5,6 +5,9 @@ namespace OsuParsers.Beatmaps.Objects.Taiko
 {
     public class TaikoHit : HitCircle
     {
+        /// <summary>
+        /// Is this HitObject big?
+        /// </summary>
         public bool IsBig
         {
             get
@@ -21,6 +24,9 @@ namespace OsuParsers.Beatmaps.Objects.Taiko
             }
         }
 
+        /// <summary>
+        /// Color of taiko hitcircle. (e.g. Red)
+        /// </summary>
         public TaikoColor Color
         {
             get

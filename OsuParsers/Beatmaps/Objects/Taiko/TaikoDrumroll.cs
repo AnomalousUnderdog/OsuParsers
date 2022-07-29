@@ -7,6 +7,9 @@ namespace OsuParsers.Beatmaps.Objects.Taiko
 {
     public class TaikoDrumroll : Slider
     {
+        /// <summary>
+        /// Is this HitObject big?
+        /// </summary>
         public bool IsBig
         {
             get
