@@ -1,3 +1,13 @@
+This is slightly edited to work easier in Unity:
+- Usage of `System.Drawing.Color` is changed to `UnityEngine.Color32`
+- Usage of `System.Numerics.Vector2` is changed to `UnityEngine.Vector2`
+
+Note that this does mean that it will no longer work outside of Unity.
+
+Some of the documentation in the markdown files were also copied over to xmldoc, and combined with documentation from the *Osu!* wiki where it made sense.
+
+----
+
 # OsuParsers [![CodeFactor](https://www.codefactor.io/repository/github/mrflashstudio/osuparsers/badge)](https://www.codefactor.io/repository/github/mrflashstudio/osuparsers) [![nuget](https://img.shields.io/nuget/v/OsuParsers.svg)](https://www.nuget.org/packages/OsuParsers)
 
 Library for parsing files associated with osu! written in C#
